@@ -1,0 +1,17 @@
+# .gitignore
+
+# dependencies
+node_modules/
+
+# dotenv file
+.env
+
+# log files
+*.log
+
+# system files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
