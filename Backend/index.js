@@ -3,6 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import { connectDB } from "./db.js";
 import userRoute from "./routes/user.route.js";
+import courseRoute from "./routes/course.route.js";
 import dotenv from "dotenv";
 dotenv.config({});
 const app = express();
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/api/v1/user", userRoute);
+app.use("/api/v1/courses",courseRoute)
 app.get("/", (req, res) => {
   res.json({ message: "Ther server is running" });
 });

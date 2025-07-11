@@ -49,7 +49,7 @@ const Profile = () => {
       console.log("Error while updating", error.message);
     }
   };
-
+      
   useEffect(() => {
     if (isSuccess) {
       refetch();

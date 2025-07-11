@@ -6,6 +6,11 @@ import MainLayout from "./layout/MainLayout";
 import Courses from "./pages/student/Courses";
 import MyLearning from "./pages/student/MyLearning";
 import Profile from "./pages/student/Profile";
+import Dashboard from "./pages/instructor/Dashboard";
+import Sidebar from "./pages/instructor/Sidebar";
+import CourseTable from "./pages/instructor/course/CourseTable";
+import Createcourse from "./pages/instructor/course/Createcourse";
+import EditCourse from "./pages/instructor/course/EditCourse";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +36,28 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "admin",
+        element: <Sidebar />,
+        children: [
+          {
+            path: "dashboard",
+            element: <Dashboard />,
+          },
+          {
+            path: "course",
+            element: <CourseTable />,
+          },
+          {
+            path: "course/createCourse",
+            element: <Createcourse />,
+          },
+          {
+            path: "course/:courseId",
+            element: <EditCourse />,
+          },
+        ],
       },
     ],
   },
